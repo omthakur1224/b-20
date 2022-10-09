@@ -10,6 +10,29 @@ if(args[2]=="read"){
         console.log(data);
     })
 }else if(args[2]=="delete"){
-    fs.unlink()
+    try {
+        fs.unlinkSync(args[3])
+        console.log('File Deleted Successfully.');
+        //file removed
+      } catch(err) {
+        console.error(err)
+      }
+}else if(args[2]=="rename"){
+    fs.rename(args[3],args[4],(err,data)=>{
+        if (err) throw err;
+        console.log('File renamed Successfully.');
+    })
 }
-
+else if(args[2]=="create"){
+    fs.writeFileSync(args[3],args[4],(err,data)=>{
+        if (err) throw err;
+        console.log('File created Successfully.');
+    })
+}
+else if(args[2]=="list ."){
+    let path=require('path');
+    fs.readdir(__dirname,"utf-8",(err,data)=>{
+        if (err) throw err;
+        console.log(data,'This is the Filelist .');
+    })
+}
