@@ -9,18 +9,20 @@ router.get('/',(req,res)=>{
     res.send(person)
 })
 router.get('/:id',(req,res)=>{
-    // console.log('getting')
     let single=person.filter((user)=>{
         if(user.id==req.params.id){
-            return user.name;
+            return user;
         }
     })
-    console.log(single)
-    res.status().send(single)
+    console.log(single[0])
+    res.status(201).send(single[0])
 })
 router.delete('/:id',(req,res)=>{
     console.log('getting')
-    res.send("you are trying to delete single user data")
+    let deleted=person.map((user)=>{
+        if(user.id!=req.params)return user;
+    })
+    res.status(200).send(deleted)
 })
 router.post('/',(req,res)=>{
     // let data=fs.readFileSync(person);
