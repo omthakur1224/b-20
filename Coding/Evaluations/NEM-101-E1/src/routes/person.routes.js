@@ -19,24 +19,25 @@ router.get('/',(req,res)=>{
     res.send(person);
 })
 router.get('/:id',(req,res)=>{
-    let single=person.filter((user)=>{
-        if(user.id==req.params.id){
-            return user;
-        }
-    })
-    console.log(single[0])
-    res.status(201).send(single[0])
+    let single=person.find((p) => p.id ==req.params.id)
+    console.log(single)
+    res.status(201).send(single)
 })
 router.delete('/:id',(req,res)=>{
-    console.log('deleting...')
-    let deleted=person.filter((user)=>
-        user.id!=(req.params.id)
-        )
+    console.log('deleting...',req.params,person[1].id)
+    
+    let deleted=person.filter((user)=>user.id!=req.params.id)
+        console.log(deleted)
     res.status(200).send(deleted)
 })
-router.post('/',(req,res)=>{
-    person.push(req.body);
-    updateDB(person);
+router.post("/",(req,res)=>{
+    console.log("heleo",req.body)
+    person.push({...req.body});
+    // updateDB(person);
+    let data=JSON.stringify(person)
+    // console.log(__dirname)
+    let dir=path.join(`${__dirname},../../../person.json`)
+    fs.writeFile(dir,data,()=>{})
     res.send(person)
 })
 
