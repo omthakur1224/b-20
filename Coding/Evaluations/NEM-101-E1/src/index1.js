@@ -85,5 +85,5 @@ app.delete('/person/:id',(req,res)=>{
 
 
 app.listen(8000,()=>{
-    console.log('hello http://localhost:8000')
+    console.log('you can check here: http://localhost:8000')
 })

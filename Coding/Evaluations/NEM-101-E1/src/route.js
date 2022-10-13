@@ -4,7 +4,7 @@ const express=require('express');
 const fs=require('fs');
 
 const app = express();
-
+// console.log(process.cwd())
 app.use(express.json());
 
 app.get("/person", (req, res) => {
