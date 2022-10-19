@@ -27,13 +27,9 @@ function App() {
       <div>
         <input type="text" onChange={({target})=>setValue(target.value)}/>
         <button onClick={()=>{dispatch(addTodo(value))}}>Add Todo</button>
-        {
-          todos.map((todo)=>(
-            <div>
-              
-            </div>
-          ))
-        }
+        {todos.map((todo,index)=>(
+            <h6 key={index}>{todo}</h6>
+          ))}
         {/* <button onClick={()=>{dispatch(addTodo(value))}}>Add Todo</button> */}
       </div>
     
