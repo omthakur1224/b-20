@@ -11,12 +11,12 @@ export const addTodo=(payload)=>({
 export const updateTodo=(payload)=>({type:UPDATE_TODO,payload});
 export const deleteTodo=(payload)=>({type:DELETE_TODO,payload});
 
-export const getTodo=async()=>{
-    let res =await axios.get('http://localhost:8000/todos')
-            let data= res.data;
-            console.log(data);
-            return {
-                type:GET_TODO,
-                payload:data
-            }
-}
+// export const getTodo=async()=>{
+//     let res =await axios.get('http://localhost:8000/todos')
+//             let data= res.data;
+//             console.log(data);
+//             return {
+//                 type:GET_TODO,
+//                 payload:data
+//             }
+// }
