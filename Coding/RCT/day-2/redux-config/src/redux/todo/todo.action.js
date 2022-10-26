@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ADD_TODO, DELETE_TODO, GET_TODO, UPDATE_TODO } from "./todo.types";
+import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from "./todo.types";
 
 export const addTodo=(payload)=>({
     type:ADD_TODO,
