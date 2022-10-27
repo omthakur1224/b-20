@@ -10,8 +10,6 @@ var data=fs.readFileSync('./db.json','utf-8');
 
 let dbusers=JSON.parse(data);
 
-// dbusers=dbusers.users;
-// data=data.dbusers;
 userRouter.get('/',(req,res)=>{
     console.log("we are here to get data")
     res.send(dbusers)
@@ -29,7 +27,7 @@ userRouter.post('/',(req,res)=>{
 })
 userRouter.delete('/:id',(req,res)=>{
     let {id}=req.params;
-    console.log(id)
+    // console.log(id)
     let data=dbusers.users;
     let newData=data.filter((user)=>user.id!=id);
 
