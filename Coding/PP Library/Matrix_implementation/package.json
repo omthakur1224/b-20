@@ -1,5 +1,5 @@
 {
-  "name": "matrix.fill",
+  "name": "matrix_implementation",
   "version": "1.0.0",
   "description": "here n is number of rows and m is number of rows and value is the default value that you want to fill in the matrix.",
   "main": "index.js",
