@@ -4,8 +4,6 @@ const app = express();
 
 const port = 8000;
 
-// app.use('/upload',require('../routes/multer'))
-
 app.listen(port,(req,res)=>{
   console.log(`app is running on port ${port}`)
 })
