@@ -6,7 +6,11 @@ const port = 8000;
 
 // app.use('/upload',require('../routes/multer'))
 
+app.listen(port,(req,res)=>{
+  console.log(`app is running on port ${port}`)
+})
 const multer  = require('multer')
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './uploads')
@@ -18,16 +22,13 @@ const storage = multer.diskStorage({
   })
   
   const upload = multer({ storage: storage })
+  
   app.post('/profile', upload.single('avatar'), function (req, res, next) {
- 
+ //param inside the upoad.single is to be same as fieldname in postman/thunderclient
     console.log('posting')
     res.send('done')
   
   })
-  app.post('/photos/upload', upload.array("photos"), function (req, res) {
+  app.post('/profiles', upload.array("photos"), function (req, res) {
    res.send("done multiple uploads")
   })
-  
-app.listen(port,(req,res)=>{
-    console.log(`app is running on port ${port}`)
-})
