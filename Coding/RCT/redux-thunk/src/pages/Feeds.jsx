@@ -14,7 +14,7 @@ const Feeds = () => {
       <h1>Feeds</h1>
       {feeds.map((post) => (
         <ul key={post.id}>
-          <li>{post.message}</li>
+          <li>{post.title}</li>
         </ul>
       ))}
     </div>

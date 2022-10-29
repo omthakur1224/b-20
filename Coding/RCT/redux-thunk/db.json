@@ -1,0 +1,8 @@
+{
+    "feeds":[
+        {"id":1,"title":"feed 1"},
+        {"id":2,"title":"feed 2"},
+        {"id":3,"title":"feed 3"},
+        {"id":4,"title":"feed 4"}
+    ]
+}

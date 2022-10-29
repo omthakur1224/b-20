@@ -14,7 +14,8 @@ export const AuthProvider = ({ children }) => {
       .post("https://reqres.in/api/login", creds)
       .then((d) => {
         setIsAuth(true);
-        localStorage.setItem("token", d.token);
+        localStorage.setItem("token", d.data.token);
+        console.log(d.data.token)
         if (state.from) {
           navigate(state.from, { replace: true });
         } else {
