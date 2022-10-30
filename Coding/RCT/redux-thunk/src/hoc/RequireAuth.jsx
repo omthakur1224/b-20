@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 
 const RequireAuth = ({ children }) => {
   // const { isAuth } = useContext(AuthContext);
-  const {auth}=useSelector(store=>store.auth.auth)
+  const auth=useSelector(store=>store.auth.auth)
   // const 
   const { pathname } = useLocation();
 

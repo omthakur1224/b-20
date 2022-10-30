@@ -1,15 +1,19 @@
 import React from "react";
 import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { logout } from "../redux/auth/auth.action";
 
 const Navbar = () => {
-  const { isAuth,logout } = useContext(AuthContext);
+  // const { isAuth,logout } = useContext(AuthContext);
+  const auth=useSelector((store=>store.auth.auth))
   const navigate = useNavigate();
+  const dispatch=useDispatch()
   const handleLoginClick = () => {
     // login screen
-    if (isAuth) {
-      logout();
+    if (auth) {
+      dispatch(logout())
       // he wants to logout
     } else {
       // he wants to login
@@ -25,7 +29,7 @@ const Navbar = () => {
       <Link to="/feeds">Feeds</Link>
       <button onClick={handleLoginClick}>
         {/* Spacer */}
-        {isAuth ? "Logout" : "Login"}
+        {auth ? "Logout" : "Login"}
       </button>
     </div>
   );

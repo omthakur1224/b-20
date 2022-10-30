@@ -1,7 +1,7 @@
 import {  LOG_IN, LOG_OUT} from "./auth.types";
 let token=localStorage.getItem('token')
 const initState={
-    auth:!token,
+    auth:!!token,
     token:"",
     }
 
@@ -12,7 +12,7 @@ export const authReducer=(state=initState,action)=>{
             localStorage.setItem("token",action.payload)
                 return{
                 ...state,
-                auth:!state.auth,
+                auth:true,
                 token:action.payload
             }
             case LOG_OUT:
@@ -20,7 +20,7 @@ export const authReducer=(state=initState,action)=>{
                 localStorage.removeItem('token')
                     return{
                     ...state,
-                    auth:!state.auth,
+                    auth:false,
                     token:""
                 }
         default:
