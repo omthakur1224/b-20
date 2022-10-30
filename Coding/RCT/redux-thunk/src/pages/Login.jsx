@@ -1,10 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { AuthContext } from "../context/AuthContext";
+import { login } from "../redux/auth/auth.action";
 
 const Login = () => {
   const [loginCreds, setLoginCreds] = useState({});
-  const { login } = useContext(AuthContext);
-
+  // const { login } = useContext(AuthContext);
+  // const login=useSelector(store=>store.auth.login);
+  const dispatch=useDispatch();
+useEffect(() => {
+  dispatch(login(loginCreds))
+}, [])
   const hanldeChange = (e) => {
     const { name, value } = e.target;
     setLoginCreds({

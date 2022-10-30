@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import RequireAuth from "./hoc/RequireAuth";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -8,7 +7,6 @@ import Feeds from "./pages/Feeds";
 import Careers from "./pages/Careers";
 import Posts from "./pages/Posts";
 import "./App.css";
-
 function App() {
   return (
     <div className="App">
@@ -36,7 +34,7 @@ function App() {
           path="posts"
           element={
             <RequireAuth>
-              <Posts />
+              <Posts/>
             </RequireAuth>
           }
         />
@@ -44,5 +42,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

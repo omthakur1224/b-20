@@ -8,7 +8,7 @@ export const feedReducer=(state=initState,action)=>{
             // state.todos.push(action.payload)
                 return{
                 ...state,
-                feeds:[state.feeds,action.payload]
+                feeds:action.payload
             }
         case UPDATE_FEEDS:
             {

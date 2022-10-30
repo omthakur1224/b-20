@@ -11,12 +11,18 @@ export const addFeed=(payload)=>({
 export const updateFeeds=(payload)=>({type:UPDATE_FEEDS,payload});
 export const deleteFeeds=(payload)=>({type:DELETE_FEEDS,payload});
 
-export const getFeeds=async()=>{
-    let res =await axios.get('http://localhost:8000/todos')
+// export const getFeeds=async()=>{
+//     let res =await axios.get('http://localhost:8000/todos')
+//             let data= res.data;
+//             console.log(data);
+//             return {
+//                 type:GET_FEEDS,
+//                 payload:data
+//             }
+// }
+export const getFeeds=()=>async(dispatch)=>{
+    let res =await axios.get('http://localhost:8080/feeds')
             let data= res.data;
             console.log(data);
-            return {
-                type:GET_FEEDS,
-                payload:data
-            }
+           dispatch({type:GET_FEEDS,payload:data})
 }

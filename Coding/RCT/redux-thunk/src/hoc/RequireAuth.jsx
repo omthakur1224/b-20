@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
+import { useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const RequireAuth = ({ children }) => {
-  const { isAuth } = useContext(AuthContext);
+  // const { isAuth } = useContext(AuthContext);
+  const {auth}=useSelector(store=>store.auth.auth)
+  // const 
   const { pathname } = useLocation();
 
-  if (isAuth) {
+  if (auth) {
     return children;
   } else {
     return (

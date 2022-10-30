@@ -1,14 +1,14 @@
-import { ADD_POST, DELETE_POST, UPDATE_POST} from "./post.types";
+import { ADD_POST, DELETE_POST, GET_POST, UPDATE_POST} from "./post.types";
 
 const initState={POSTs:[]}
 
 export const postReducer=(state=initState,action)=>{
     switch(action.type){
-        case ADD_POST:
+        case GET_POST:
             // state.POSTs.push(action.payload)
                 return{
                 ...state,
-                POSTs:[state.POSTs,action.payload]
+                POSTs:action.payload
             }
         case UPDATE_POST:
             {

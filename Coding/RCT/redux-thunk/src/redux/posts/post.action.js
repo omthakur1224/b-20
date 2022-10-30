@@ -11,12 +11,12 @@ export const addPOST=(payload)=>({
 export const updatePOST=(payload)=>({type:UPDATE_POST,payload});
 export const deletePOST=(payload)=>({type:DELETE_POST,payload});
 
-export const getPost=async()=>{
-    let res =await axios.get('http://localhost:8000/posts')
+export const getPost=()=>async(dispatch)=>{
+    let res =await axios.get('http://localhost:8080/posts')
             let data= res.data;
             console.log(data);
-            return {
+         dispatch({
                 type:GET_POST,
                 payload:data
-            }
+            })
 }

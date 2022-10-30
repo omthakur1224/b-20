@@ -1,7 +1,7 @@
 import {  LOG_IN, LOG_OUT} from "./auth.types";
 let token=localStorage.getItem('token')
 const initState={
-    auth:!!token,
+    auth:!token,
     token:"",
     }
 
