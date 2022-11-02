@@ -8,7 +8,7 @@ export const login=(creds)=>async(dispatch)=>{
     console.log(creds,'creds')
     let res=await axios.post('https://reqres.in/api/login',creds);
     // console.log(res,'loginres')
-    dispatch({type:LOG_IN,payload:res.data.token});
+    dispatch({type:LOG_IN,payload:res.data});
     console.log(res.data.token,"tokennnnn")
     // return res.data.token;
 }

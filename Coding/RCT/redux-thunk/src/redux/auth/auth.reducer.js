@@ -23,6 +23,7 @@ export const authReducer=(state=initState,action)=>{
                     auth:false,
                     token:""
                 }
+                
         default:
                 return state
     }
