@@ -69,12 +69,14 @@ userRouter.patch("/:id",(req,res)=>{
 
     let user=JSON.parse(dbdata);
 
-    user=user.users;
-
-    dbusers.users.map((user)=>{if(user.id==id){user.username=username}});
-
-    fs.writeFile('db.json',JSON.stringify(dbusers),()=>{});
-    res.status(201).send('updated Successfully');
+        user=user.users;
+  
+        dbusers.users.map((user)=>{if(user.id==id){user.username=username}});
+    
+        fs.writeFile('db.json',JSON.stringify(dbusers),()=>{});
+        res.status(201).send('updated Successfully');
+    
+    
 })
 
 module.exports=userRouter;
