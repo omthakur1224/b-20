@@ -75,8 +75,6 @@ userRouter.patch("/:id",(req,res)=>{
     
         fs.writeFile('db.json',JSON.stringify(dbusers),()=>{});
         res.status(201).send('updated Successfully');
-    
-    
 })
 
 module.exports=userRouter;
