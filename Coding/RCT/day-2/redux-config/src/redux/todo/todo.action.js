@@ -12,7 +12,7 @@ export const updateTodo=(payload)=>({type:UPDATE_TODO,payload});
 export const deleteTodo=(payload)=>({type:DELETE_TODO,payload});
 
 // export const getTodo=async()=>{
-//     let res =await axios.get('http://localhost:8000/todos')
+    // let res =await axios.get('http://localhost:8000/user')
 //             let data= res.data;
 //             console.log(data);
 //             return {
