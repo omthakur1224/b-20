@@ -22,6 +22,7 @@ const storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + uniqueSuffix)
   }
 })
+//creating storage here
 
 const upload = multer({ storage: storage })
 
